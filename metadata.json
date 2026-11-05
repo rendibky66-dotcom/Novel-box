@@ -1,0 +1,8 @@
+{
+  "name": "NOVEL BOX",
+  "description": "Your Novels, All in One Place. Platform digital untuk menyimpan, mengatur, mencari, dan membaca koleksi novel digital lengkap dengan rak buku interaktif, mode malam, dan sinkronisasi progres baca.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

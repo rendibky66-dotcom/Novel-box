@@ -1,0 +1,619 @@
+import { Novel, UserProfile } from '../types';
+
+export const INITIAL_NOVELS: Novel[] = [
+  {
+    id: 'sample-novel-1',
+    title: 'Senja di Ujung Cerita',
+    author: 'Rendra Putra',
+    category: 'Romance',
+    synopsis: 'Kisah dua orang yang bertemu secara tidak sengaja dan saling mengenal melalui perjalanan kehidupan. Mereka belajar tentang cinta, kepercayaan, dan arti kehilangan.',
+    coverGradient: {
+      from: '#701a75',
+      to: '#3b0764',
+      accent: '#f472b6',
+      icon: 'heart'
+    },
+    fileType: 'text',
+    fileName: 'Senja_di_Ujung_Cerita.txt',
+    fileSize: '1.2 MB',
+    pageCount: 210,
+    estimatedMinutes: 190,
+    rating: 4.8,
+    isFavorite: true,
+    isSample: true,
+    progress: {
+      currentPage: 0,
+      totalPages: 210,
+      currentChapterIndex: 0,
+      scrollPercent: 0,
+      percentage: 0,
+      completed: false,
+      totalReadingTimeMinutes: 0
+    },
+    bookmarks: [],
+    notes: [],
+    createdAt: '2026-11-05T01:00:00.000Z',
+    chapters: [
+      {
+        id: 'c-sdc-1',
+        title: 'Bab 1: Pertemuan di Bawah Naungan Senja',
+        content: `Langit senja di pesisir barat perlahan memancarkan semburat jingga kemerahan yang memukau. Angin sore berhembus lembut menyapu dermaga tua berkayu jati yang mulai berlumut. Di sanalah, tanpa sengaja, dua tatap mata saling terpaut dalam keheningan yang tak terduga.\n\n"Apakah kamu sering datang ke tempat ini saat senja tiba?" suara itu terdengar pelan, namun cukup hangat untuk memecah gemuruh ombak yang menabrak tiang-tiang dermaga.\n\nSebuah pertemuan sederhana yang tidak pernah direncanakan oleh siapa pun, namun menjadi awal dari perjalanan panjang tentang cara mencintai, mempercayai, dan menerima setiap kehilangan dengan lapang dada.`
+      },
+      {
+        id: 'c-sdc-2',
+        title: 'Bab 2: Jejak Kata yang Tertinggal',
+        content: `Secangkir kopi hangat mengepul di kedai pinggir jalan kecil. Percakapan mengalir perlahan, menyingkap lembar demi lembar rahasia yang selama ini tersimpan rapat dalam dada.\n\n"Kadang kala kita takut untuk melangkah bukan karena jalannya yang sulit," tuturnya sambil menatap rintik hujan yang mulai membasahi jendela kaca. "Tetapi karena kita terlalu takut untuk melepaskan bayang-bayang masa lalu."`
+      }
+    ]
+  },
+  {
+    id: 'sample-novel-2',
+    title: 'Dunia di Balik Hutan',
+    author: 'Ardi Saputra',
+    category: 'Fantasy',
+    synopsis: 'Seorang pemuda menemukan hutan misterius yang menyimpan dunia rahasia. Ia memulai petualangan untuk menemukan kekuatan tersembunyi.',
+    coverGradient: {
+      from: '#1e1b4b',
+      to: '#064e3b',
+      accent: '#34d399',
+      icon: 'compass'
+    },
+    fileType: 'text',
+    fileName: 'Dunia_di_Balik_Hutan.txt',
+    fileSize: '1.6 MB',
+    pageCount: 280,
+    estimatedMinutes: 240,
+    rating: 4.9,
+    isFavorite: false,
+    isSample: true,
+    progress: {
+      currentPage: 0,
+      totalPages: 280,
+      currentChapterIndex: 0,
+      scrollPercent: 0,
+      percentage: 0,
+      completed: false,
+      totalReadingTimeMinutes: 0
+    },
+    bookmarks: [],
+    notes: [],
+    createdAt: '2026-11-05T01:10:00.000Z',
+    chapters: [
+      {
+        id: 'c-dbh-1',
+        title: 'Bab 1: Kabut Berpendar di Lembah Terlarang',
+        content: `Hutan rimba di ujung desa selalu dijuluki oleh para tetua sebagai 'Hutan Tanpa Akhir'. Tidak ada seorang pun yang berani melangkah lebih dari batas pohon beringin tua berakar gantung. Namun rasa ingin tahu Arga mengalahkan rasa takutnya.\n\nKetika kakinya menginjak hamparan lumut zamrud di balik kabut tebal, tanah di bawahnya bergetar pelan. Pohon-pohon purba di sekelilingnya memancarkan pendar cahaya keemasan. Di hadapannya terbentang gerbang batu runik raksasa yang menembus dunia yang tak pernah tercatat di buku peta mana pun.`
+      },
+      {
+        id: 'c-dbh-2',
+        title: 'Bab 2: Kebangkitan Kekuatan Tersembunyi',
+        content: `Di dalam kubah langit hutan rahasia, pulau-pulau tanah terapung melayang anggun di antara awan kemilau. Seekor burung elang bersayap kristal meluncur melintasi ngarai zamrud.\n\nSaat Arga menyentuh kristal pelindung di altar gerbang, aura kekuatan murni mengalir ke urat nadinya, membangkitkan takdir yang telah tertidur selama seribu tahun lamanya.`
+      }
+    ]
+  },
+  {
+    id: 'sample-novel-3',
+    title: 'Rahasia Rumah Tua',
+    author: 'Dimas Pratama',
+    category: 'Mystery',
+    synopsis: 'Seorang remaja menemukan surat misterius di rumah peninggalan keluarganya yang membawanya pada rahasia masa lalu.',
+    coverGradient: {
+      from: '#581c87',
+      to: '#111827',
+      accent: '#e9d5ff',
+      icon: 'search'
+    },
+    fileType: 'text',
+    fileName: 'Rahasia_Rumah_Tua.txt',
+    fileSize: '1.4 MB',
+    pageCount: 230,
+    estimatedMinutes: 200,
+    rating: 4.7,
+    isFavorite: true,
+    isSample: true,
+    progress: {
+      currentPage: 0,
+      totalPages: 230,
+      currentChapterIndex: 0,
+      scrollPercent: 0,
+      percentage: 0,
+      completed: false,
+      totalReadingTimeMinutes: 0
+    },
+    bookmarks: [],
+    notes: [],
+    createdAt: '2026-11-05T01:20:00.000Z',
+    chapters: [
+      {
+        id: 'c-rrt-1',
+        title: 'Bab 1: Kotak Kayu di Balik Dinding Loteng',
+        content: `Derit anak tangga kayu jati tua itu berbunyi nyaring setiap kali diinjak. Rumah peninggalan kakek buyut di pinggir kota telah terkunci selama lebih dari dua dekade. Debu tebal menyelimuti perabotan antik dan lukisan-lukisan berbingkai ukir yang menatap dingin.\n\nSaat sedang merapikan tumpukan koran tua di sudut loteng, jemari Rian menyenggol sebilah papan dinding yang longgar. Di balik rongga tersembunyi itu, tergeletak sebuah kotak kayu mahoni dengan ukiran lambang burung merak perak.`
+      },
+      {
+        id: 'c-rrt-2',
+        title: 'Bab 2: Pesan yang Terhapus Waktu',
+        content: `Gembok kuningan kotak tua itu terbuka dengan bunyi klik lirih. Di dalamnya tersimpan seikat surat dengan segel lilin merah bertanggal tahun 1965.\n\n'Jika surat ini sampai ke tanganmu, ketahuilah bahwa kebenaran tentang hilangnya harta pusaka keluarga kita tidak seperti yang mereka kabarkan...'\n\nJantung Rian berdegup kencang saat menyadari bahwa misteri keluarga yang terkubur selama puluhan tahun kini terbuka tepat di hadapannya.`
+      }
+    ]
+  },
+  {
+    id: 'sample-novel-4',
+    title: 'Jejak Sang Petualang',
+    author: 'Fajar Ramadhan',
+    category: 'Adventure',
+    synopsis: 'Seorang pemuda menjelajahi berbagai tempat untuk menemukan tujuan hidup dan menghadapi berbagai tantangan.',
+    coverGradient: {
+      from: '#5b21b6',
+      to: '#1e1b4b',
+      accent: '#e879f9',
+      icon: 'compass'
+    },
+    fileType: 'text',
+    fileName: 'Jejak_Sang_Petualang.txt',
+    fileSize: '1.5 MB',
+    pageCount: 260,
+    estimatedMinutes: 220,
+    rating: 4.8,
+    isFavorite: false,
+    isSample: true,
+    progress: {
+      currentPage: 0,
+      totalPages: 260,
+      currentChapterIndex: 0,
+      scrollPercent: 0,
+      percentage: 0,
+      completed: false,
+      totalReadingTimeMinutes: 0
+    },
+    bookmarks: [],
+    notes: [],
+    createdAt: '2026-11-05T01:30:00.000Z',
+    chapters: [
+      {
+        id: 'c-jsp-1',
+        title: 'Bab 1: Menembus Batas Cakrawala',
+        content: `Ransel kanvas berbeban belasan kilogram terasa kokoh di pundak Fikri. Dari atas puncak tebing karang, laut lepas terhampar luas tak bertepi, berkilau memantulkan cahaya mentari fajar yang hangat.\n\nIa telah memutuskan untuk meninggalkan zona nyaman kota besar. Menjelajahi pulau-pulau terluar nusantara, menyeberangi selat berombak ganas, dan mendaki gunung-gunung berkabut tebal bukan sekadar perjalanan fisik, melainkan pencarian jati diri yang sejati.`
+      },
+      {
+        id: 'c-jsp-2',
+        title: 'Bab 2: Badai di Lembah Karst',
+        content: `Angin kencang menerpa dinding tenda di antara celah tebing karst yang menjulang angkuh. Bersama seorang pemandu lokal berpengalaman, Fikri belajar arti ketangguhan dan kerendahan hati di hadapan kemegahan alam bebas.`
+      }
+    ]
+  },
+  {
+    id: 'sample-novel-5',
+    title: 'Langkah Menuju Impian',
+    author: 'Andi Wijaya',
+    category: 'Inspirasi',
+    synopsis: 'Kisah seorang anak muda yang berusaha meraih cita-citanya meskipun menghadapi berbagai kesulitan.',
+    coverGradient: {
+      from: '#4c1d95',
+      to: '#0f172a',
+      accent: '#38bdf8',
+      icon: 'sparkles'
+    },
+    fileType: 'text',
+    fileName: 'Langkah_Menuju_Impian.txt',
+    fileSize: '1.3 MB',
+    pageCount: 240,
+    estimatedMinutes: 210,
+    rating: 4.9,
+    isFavorite: true,
+    isSample: true,
+    progress: {
+      currentPage: 0,
+      totalPages: 240,
+      currentChapterIndex: 0,
+      scrollPercent: 0,
+      percentage: 0,
+      completed: false,
+      totalReadingTimeMinutes: 0
+    },
+    bookmarks: [],
+    notes: [],
+    createdAt: '2026-11-05T01:40:00.000Z',
+    chapters: [
+      {
+        id: 'c-lmi-1',
+        title: 'Bab 1: Lilin Harapan di Gang Sempit',
+        content: `Lampu belajar kecil bertenaga baterai menerangi meja kayu lapuk di kamar sempit berukuran dua kali tiga meter. Di luar, suara deru kereta api malam melintas pelan di jalur rel yang berjarak hanya beberapa meter dari dinding rumah petak.\n\nDimas menatap lembar formulir beasiswa perguruan tinggi impiannya. Banyak orang mencemooh bahwa anak dari keluarga sederhana di pinggiran rel tidak akan pernah bisa menginjakkan kaki di universitas kelas dunia. Namun setiap tetes keringat orang tuanya adalah api semangat yang tak pernah padam di dadanya.`
+      },
+      {
+        id: 'c-lmi-2',
+        title: 'Bab 2: Pintu Kesempatan yang Terbuka',
+        content: `Ujian seleksi nasional itu diikuti oleh puluhan ribu peserta dari seluruh penjuru negeri. Dimas mengingat setiap malam ia belajar hingga larut, mengorbankan waktu bermain dan istirahat demi satu tujuan besar.\n\nKetika surat pengumuman resmi bertinta emas itu tiba di tangannya, air mata haru mengalir deras. Impian bukan lagi angan-angan kosong, melainkan kenyataan yang siap diwujudkan dengan tekad membaja.`
+      }
+    ]
+  },
+  {
+    id: 'novel-1',
+    title: 'Ksatria Kristal Bayangan',
+    author: 'Budi Pratama',
+    category: 'Fantasy',
+    synopsis: 'Di benua Eldoria yang terancam kegelapan abadi, seorang pemuda penempa pedang menemukan pecahan Kristal Bayangan terlarang di reruntuhan kuil kuno. Kekuatan kristal ini mampu membangkitkan naga bayangan, namun menuntut pengorbanan jiwa yang tak terbayangkan.',
+    coverGradient: {
+      from: '#4c1d95',
+      to: '#1e1b4b',
+      accent: '#c084fc',
+      icon: 'sparkles'
+    },
+    fileType: 'text',
+    fileName: 'Ksatria_Kristal_Bayangan.epub',
+    fileSize: '2.4 MB',
+    pageCount: 320,
+    estimatedMinutes: 280,
+    rating: 4.9,
+    isFavorite: true,
+    progress: {
+      currentPage: 45,
+      totalPages: 320,
+      currentChapterIndex: 1,
+      scrollPercent: 35,
+      percentage: 28,
+      lastReadAt: '2026-11-05T08:15:00.000Z',
+      completed: false,
+      totalReadingTimeMinutes: 78
+    },
+    bookmarks: [
+      {
+        id: 'bm-1',
+        chapterIndex: 1,
+        page: 45,
+        note: 'Pertemuan pertama dengan naga kristal!',
+        createdAt: '2026-11-04T14:20:00.000Z'
+      }
+    ],
+    notes: [
+      {
+        id: 'note-1',
+        chapterIndex: 0,
+        text: 'Legenda tiga kristal primordial: Cahaya, Bayangan, dan Waktu.',
+        excerpt: 'Hanya mereka yang memiliki darah penempa api pertama...',
+        createdAt: '2026-11-03T10:00:00.000Z'
+      }
+    ],
+    createdAt: '2026-10-15T09:00:00.000Z',
+    chapters: [
+      {
+        id: 'c1-1',
+        title: 'Bab 1: Denting Api Terakhir di Lembah Besi',
+        content: `Denting palu menghantam baja panas bergaung di lembah berkabut. Kaelan menyeka keringat di dahinya yang berlumuran jelaga hitam. Api di perapian bengkel tua itu berkobar tidak seperti biasanya—lidah apinya berpendar ungu keperakan, mendesis seolah menyimpan bisikan dari masa yang teramat lampau.
+
+"Jangan sentuh terak batu itu, Kaelan," suara kakeknya, Barund, terdengar berat dari sudut bengkel yang remang. Pria tua itu bertumpu pada tongkat kayu eboni yang diukir dengan simbol-simbol pelindung kuno. "Malam ini bintang merah Aldebaran sejajar dengan menara reruntuhan Eldoria. Pintu gerbang bayangan sedang bergetar."
+
+Kaelan menatap batu obsidian berurat safir di atas meja kerja. Batu itu terasa hangat, berdenyut pelan bagai detak jantung makhluk hidup yang terlelap. Ketika jemarinya mendekat hanya sehelai rambut dari permukaannya, seberkas kilatan ungu menusuk matanya.
+
+"Aku merasakannya, Kek," bisik Kaelan, suaranya tercekat. "Ada yang memanggil namaku dari balik kabut ngarai."
+
+Tepat saat itu, lolongan serigala bayangan bergema di kejauhan, membelah keheningan malam dingin Lembah Besi. Langit yang biasanya bertabur bintang kini tertutup awan ungu gelap yang berputar cepat, membentuk pusaran angin topan mistis.`
+      },
+      {
+        id: 'c1-2',
+        title: 'Bab 2: Bisikan Kuil yang Terlupakan',
+        content: `Kabut tebal menelan langkah Kaelan saat ia menembus hutan lumut perak di kaki tebing Eldoria. Di genggamannya, belati berhulu perak memancarkan pendar redup, menjadi satu-satunya lentera di tengah kegelapan pekat yang menekan dada.
+
+Reruntuhan Kuil Primordial berdiri megah meski telah dimakan usia ribuan tahun. Pilar-pilar granit raksasa yang terpahat dengan sosok naga bersayap enam menjulang menembus kanopi kabut. Di altar tengah, kristal bayangan melayang bebas di udara, memancarkan gelombang energi magis yang membuat udara di sekitar bergetar halus.
+
+"Selamat datang, Pewaris Api Terakhir," sebuah suara terdengar menggema bukan di telinga, melainkan langsung di dalam rongga dada Kaelan.
+
+Dari bayang-bayang pilar kuil, sosok berselubung jubah sutra malam perlahan melangkah keluar. Matanya bersinar laksana dua lentera bintang di malam tanpa bulan.`
+      },
+      {
+        id: 'c1-3',
+        title: 'Bab 3: Sumpah Darah Naga Bayangan',
+        content: `Sosok berjubah itu membuka kerudungnya, menampakkan wajah seorang perempuan elven dengan ukiran rune bercahaya di pelipisnya. Namanya Seraphina, penjaga sumpah terakhir dari Ordo Kristal.
+
+"Dunia manusia mengira perang melawan Ratu Bayangan telah usai seribu tahun lalu," tutur Seraphina, suaranya setenang air danau beku. "Namun segel di Pegunungan Hitam mulai retak. Dan hanya mereka yang berdarah murni penempa api yang mampu menyatukan pecahan kristal ini tanpa terbakar menjadi debu."
+
+Kaelan menelan ludah. Ia melangkah mendekati altar. Begitu telapak tangannya menyentuh Kristal Bayangan, rasa sakit yang membakar menjalar seketika ke seluruh urat nadinya. Di balik matanya yang terpejam, ia melihat visi masa depan: kerajaan-kerajaan yang terbakar, dan seekor naga hitam bersisik obsidian bangkit meraung menghadap angkasa!`
+      }
+    ]
+  },
+  {
+    id: 'novel-2',
+    title: 'Hujan Terakhir di Braga',
+    author: 'Dian Sastrowardoyo',
+    category: 'Romance',
+    synopsis: 'Pertemuan tak sengaja di bawah kanopi toko buku tua Jalan Braga saat hujan deras Bandung mempertemukan Aruna, seorang kurator seni, dengan Bimo, arsitek restorasi cagar budaya. Cinta mereka diuji oleh waktu, surat rahasia tahun 1950-an, dan pilihan hidup yang berbeda haluan.',
+    coverGradient: {
+      from: '#701a75',
+      to: '#3b0764',
+      accent: '#f472b6',
+      icon: 'heart'
+    },
+    fileType: 'text',
+    fileName: 'Hujan_Terakhir_di_Braga.pdf',
+    fileSize: '1.8 MB',
+    pageCount: 245,
+    estimatedMinutes: 210,
+    rating: 4.8,
+    isFavorite: true,
+    progress: {
+      currentPage: 110,
+      totalPages: 245,
+      currentChapterIndex: 1,
+      scrollPercent: 60,
+      percentage: 45,
+      lastReadAt: '2026-11-04T20:30:00.000Z',
+      completed: false,
+      totalReadingTimeMinutes: 95
+    },
+    bookmarks: [],
+    notes: [
+      {
+        id: 'note-2',
+        chapterIndex: 0,
+        text: 'Kutipan indah tentang aroma kopi dan rintik hujan Bandung tempo dulu.',
+        excerpt: 'Hujan di Braga selalu membawa aroma tanah basah dan nostalgia...',
+        createdAt: '2026-11-02T19:10:00.000Z'
+      }
+    ],
+    createdAt: '2026-10-18T14:20:00.000Z',
+    chapters: [
+      {
+        id: 'c2-1',
+        title: 'Bab 1: Payung Merah dan Secangkir Kopi Hitam',
+        content: `Bandung pukul empat sore selalu punya cara tersendiri untuk melankolis. Gemuruh guntur pelan di balik perbukitan Dago mengiringi tirai hujan yang tumpah deras ke aspal Jalan Braga. Aruna berdiri merapatkan mantel wol ungu mudanya di bawah teritisan toko buku antik 'Boekhandel Preanger'.
+
+Hawa dingin menusuk hingga ke tulang. Di sampingnya, seorang pria jangkung dengan kamera analog tergantung di leher sedang mengibas-ngibaskan air dari payung lipat hitamnya.
+
+"Hujan Bandung kalau sudah turun begini biasanya betah sampai malam," kata pria itu tiba-tiba, menoleh sambil tersenyum ramah. Matanya hangat di balik kacamata berbingkai tipis.
+
+Aruna menoleh, sedikit terkejut. "Saya rasa juga begitu. Padahal saya harus segera ke Galeri Selasar Sunaryo sebelum jam enam."
+
+"Galeri Selasar? Pameran instalasi lukisan cat minyak era pasca-kemerdekaan itu?" mata pria itu berbinar. "Saya Bimo. Saya arsitek yang membantu konservasi gedung sayap timurnya."`
+      },
+      {
+        id: 'c2-2',
+        title: 'Bab 2: Surat Berdebu di Bawah Lantai Tegel',
+        content: `Aroma kopi tubruk dan roti bakar aroma kayu manis memenuhi kedai kecil di gang sunyi tak jauh dari Jalan Asia Afrika. Suara piringan hitam memutar lagu instrumental klasik mengiringi obrolan hangat mereka yang terasa mengalir tanpa canggung, seolah mereka telah saling mengenal bertahun-tahun.
+
+"Ada sesuatu yang ingin kutunjukkan padamu, Aruna," Bimo membuka ransel kanvasnya dan mengeluarkan sebuah amplop cokelat tua yang ujungnya telah menguning rapuh. "Minggu lalu saat tim kami membongkar lantai tegel Belanda di ruang bawah tanah gedung cagar budaya jalan Tamblong, tukang kami menemukan kotak timah ini."
+
+Aruna menahan napas saat menyentuh kertas surat tersebut. Tulisan tangan dengan tinta mangsi biru bertanggal 14 September 1952 itu masih terbaca jelas.
+
+'Untuk Gayatri, cintaku yang tertahan di balik kabut Gunung Tangkuban Parahu...'`
+      }
+    ]
+  },
+  {
+    id: 'novel-3',
+    title: 'Misteri Rumah Tua Kaliurang',
+    author: 'Risa Damayanti',
+    category: 'Horror',
+    synopsis: 'Villa peninggalan kolonial Belanda di lereng Gunung Merapi menyimpan kutukan tujuh keturunan. Ketika lima mahasiswa menginap untuk penelitian sejarah, jendela kaca yang tertutup rapat mulai berderit di tengah malam, dan lonceng tua di loteng berdentang sendiri.',
+    coverGradient: {
+      from: '#2e1065',
+      to: '#020617',
+      accent: '#a855f7',
+      icon: 'skull'
+    },
+    fileType: 'text',
+    fileName: 'Misteri_Rumah_Tua_Kaliurang.epub',
+    fileSize: '3.1 MB',
+    pageCount: 290,
+    estimatedMinutes: 250,
+    rating: 4.7,
+    isFavorite: false,
+    progress: {
+      currentPage: 0,
+      totalPages: 290,
+      currentChapterIndex: 0,
+      scrollPercent: 0,
+      percentage: 0,
+      completed: false,
+      totalReadingTimeMinutes: 0
+    },
+    bookmarks: [],
+    notes: [],
+    createdAt: '2026-10-22T11:00:00.000Z',
+    chapters: [
+      {
+        id: 'c3-1',
+        title: 'Bab 1: Gerbang Berkarat dan Kabut Belerang',
+        content: `Kabut tebal menuruni punggung Gunung Merapi laksana kabut asap kuburan. Mobil jip tua yang kami tumpangi tersendat-sendat mendaki jalanan sempit Kaliurang yang berlumut licin. Jam digital di dasbor menunjukkan pukul 18.45, namun kegelapan telah menyelimuti rimba pinus di kanan-kiri seolah tengah malam buta.
+
+"Yakin ini alamatnya, Rangga?" tanya Tania dari kursi belakang, memeluk jaket tebalnya yang menggigil. "Tempat ini bahkan tidak ada di peta GPS."
+
+Rangga tidak menjawab. Sorot lampu mobil menabrak gerbang besi hitam tinggi berkarat dengan ukiran lambang keluarga bangsawan Belanda: 'Villa Van Der Veen - 1928'. Rantai gembok gerbang itu sudah putus, mengayun pelan tertiup angin gunung yang membawa aroma belerang menyengat.
+
+Begitu mobil melintasi gerbang, mesin mobil tiba-tiba mati total. Bersamaan dengan itu, suara denting piano sayup terdengar dari lantai dua rumah besar berdinding batu kali itu.`
+      },
+      {
+        id: 'c3-2',
+        title: 'Bab 2: Jam Dinding yang Berputar Mundur',
+        content: `Lilin aromaterapi yang kami nyalakan di atas meja perjamuan makan bergoyang gelisah. Bayangan lemari kaca tinggi di dinding terlihat memanjang dan bergidik mengerikan.
+
+"Semua pintu terkunci dari luar," lapor Dimas, wajahnya pucat pasi sambil memegang senter yang mulai berkedip-kedip kehabisan daya. "Dan jendelanya... tralis besinya seperti dilas mati."
+
+Tiba-tiba, jam kayu jati berbandul kuningan di ruang tengah berdentang keras tujuh kali. Kami semua terkesiap menatap jam tersebut. Jarum panjangnya tidak berputar ke kanan, melainkan bergerak berputar kencang ke arah kiri!
+
+Lalu dari balik dinding kayu di dekat perapian, terdengar ketukan tiga kali berulang-ulang: Tok... Tok... Tok...`
+      }
+    ]
+  },
+  {
+    id: 'novel-4',
+    title: 'Teka-Teki Jam Gadang Kuno',
+    author: 'Raden Mas Prasetyo',
+    category: 'Mystery',
+    synopsis: 'Sebuah kode rahasia tersembunyi di dalam mekanisme mekanik Jam Gadang Bukittinggi sejak zaman perlawanan kolonial. Detektif independen Arya Sena harus memecahkan teka-teki sandi sebelum sindikat penyelundup artefak internasional menghancurkan situs bersejarah tersebut.',
+    coverGradient: {
+      from: '#581c87',
+      to: '#111827',
+      accent: '#e9d5ff',
+      icon: 'search'
+    },
+    fileType: 'text',
+    fileName: 'Teka_Teki_Jam_Gadang.pdf',
+    fileSize: '2.9 MB',
+    pageCount: 310,
+    estimatedMinutes: 260,
+    rating: 4.9,
+    isFavorite: true,
+    progress: {
+      currentPage: 310,
+      totalPages: 310,
+      currentChapterIndex: 2,
+      scrollPercent: 100,
+      percentage: 100,
+      lastReadAt: '2026-11-01T15:40:00.000Z',
+      completed: true,
+      totalReadingTimeMinutes: 255
+    },
+    bookmarks: [],
+    notes: [],
+    createdAt: '2026-10-25T16:30:00.000Z',
+    chapters: [
+      {
+        id: 'c4-1',
+        title: 'Bab 1: Roda Gigi Keempat Belas',
+        content: `Angin sejuk dataran tinggi Bukittinggi membelai wajah Arya Sena saat ia berdiri di balkon pengamatan lantai atas Jam Gadang. Di hadapannya terhampar lanskap perbukitan Minangkabau yang elok dengan latar Gunung Singgalang dan Marapi.
+
+Namun Arya tidak datang sebagai turis biasa. Di tangannya terdapat secarik buku catatan bersampul kulit milik mendiang pamannya, Profesor Basri, seorang sejarawan mekanika yang ditemukan tewas misterius sepekan lalu di kamar kerjanya.
+
+Catatan pamannya hanya memuat satu kalimat penuh teka-teki:
+'Roda gigi keempat belas tidak digerakkan oleh pendulum, melainkan oleh bayangan matahari titik balik musim panas.'
+
+Arya membuka panel mekanik kuno mesin jam buatan pabrik Vortmann di Jerman tersebut. Jarum kuningan berdetak teratur. Dan benar saja, di balik roda transmisi utama, tersembunyi sebuah silinder kuningan bertatahkan huruf Arab Melayu kuno.`
+      },
+      {
+        id: 'c4-2',
+        title: 'Bab 2: Sandi Ranah Minang',
+        content: `Bunyi gesekan logam terdengar halus saat Arya memutar dial kombinasi pada silinder kuningan. Bau minyak pelumas tua berusia seabad menguar ke udara ruangan sempit menara jam.
+
+"Arya Sena, angkat tanganmu perlahan dan berbaliklah," sebuah suara dingin beraksen Eropa terdengar dari pintu tangga spiral di belakangnya.
+
+Arya menoleh perlahan. Seorang pria berjas kelabu memegang pistol berperedam suara. Di belakang pria itu berdiri dua orang pengawal berbadan tegap.
+
+"Kalian kelompok Phoenix Hitam," desis Arya tenang, meski detak jantungnya berpacu cepat. "Kalian mencari peta tambang emas peninggalan Paderi yang disembunyikan Tuanku Imam Bonjol."`
+      },
+      {
+        id: 'c4-3',
+        title: 'Bab 3: Kebenaran di Bawah Cahaya Purnama',
+        content: `Arya memanfaatkan dentang keras lonceng Jam Gadang pukul sembilan malam yang menggelegar memekakkan telinga. Gelombang suara yang kuat mengejutkan para penyerang, memberi Arya waktu sepersekian detik untuk melompat ke sisi katrol penyeimbang dan memutuskan tali kerekan!
+
+Roda gigi berputar kencang menciptakan percikan bunga api keemasan. Silinder kuningan terbuka dengan bunyi 'klik' yang mantap, menjatuhkan sebuah lempengan perunggu tipis berukir relief peta rahasia gua Ngalau Indah.
+
+Kini rahasia terbesar pejuang kemerdekaan berada di tangannya, dan misi penyelamatan warisan bangsa baru saja dimulai.`
+      }
+    ]
+  },
+  {
+    id: 'novel-5',
+    title: 'Protokol Arkadia 2088',
+    author: 'Dr. Budi Setiawan',
+    category: 'Sci-Fi',
+    synopsis: 'Tahun 2088, Jakarta terendam air laut dan manusia hidup di Megatropolis Terapung Nusantara. Seorang programmer neuro-link mendeteksi kode kesadaran tiruan yang bersembunyi di dalam jaringan pusat energi satelit surya.',
+    coverGradient: {
+      from: '#3b0764',
+      to: '#0f172a',
+      accent: '#818cf8',
+      icon: 'cpu'
+    },
+    fileType: 'text',
+    fileName: 'Protokol_Arkadia_2088.epub',
+    fileSize: '3.5 MB',
+    pageCount: 380,
+    estimatedMinutes: 320,
+    rating: 4.8,
+    isFavorite: false,
+    progress: {
+      currentPage: 30,
+      totalPages: 380,
+      currentChapterIndex: 0,
+      scrollPercent: 15,
+      percentage: 8,
+      lastReadAt: '2026-11-03T11:20:00.000Z',
+      completed: false,
+      totalReadingTimeMinutes: 24
+    },
+    bookmarks: [],
+    notes: [],
+    createdAt: '2026-10-28T08:00:00.000Z',
+    chapters: [
+      {
+        id: 'c5-1',
+        title: 'Bab 1: Kilatan Neon di Kota Mengapung',
+        content: `Hujan asam berkilau di bawah lampu holografik setinggi tiga ratus meter di Pelabuhan Terapung Marunda. Dari kapsul keretanya yang meluncur di atas rel magnetik, Rama menatap kubah kaca raksasa yang melindungi sepuluh juta warga Jakarta Baru dari radiasi atmosfer.
+
+Di pelipis kirinya, chip neuro-link generasi ketujuh berkedip biru lembut.
+
+[Pemberitahuan Sistem: Anomali terdeteksi pada node kuantum 09-Theta. Tingkat enkripsi: Kelas Militer.]
+
+Rama mengernyitkan alis. Sebagai insinyur sistem keamanan siber terkemuka di Badan Energi Nusantara, tugasnya adalah memastikan pasokan listrik dari satelit surya geosinkron tetap stabil. Namun anomali kali ini berbeda. Pola gelombang datanya tidak menyerupai algoritma komputer biasa.
+
+Pola itu memiliki irama pernapasan. Pola itu seperti detak jantung manusia.`
+      }
+    ]
+  },
+  {
+    id: 'novel-6',
+    title: 'Ekspedisi Rimba Mahameru',
+    author: 'Arga Wicaksono',
+    category: 'Petualangan',
+    synopsis: 'Catatan perjalanan napak tilas para pendaki menembus hutan perawan lereng selatan Semeru mencari peninggalan candi suci yang hilang di masa Kerajaan Majapahit, di tengah ancaman letusan abu vulkanik.',
+    coverGradient: {
+      from: '#5b21b6',
+      to: '#1e1b4b',
+      accent: '#e879f9',
+      icon: 'compass'
+    },
+    fileType: 'text',
+    fileName: 'Ekspedisi_Rimba_Mahameru.pdf',
+    fileSize: '2.1 MB',
+    pageCount: 260,
+    estimatedMinutes: 220,
+    rating: 4.6,
+    isFavorite: true,
+    progress: {
+      currentPage: 0,
+      totalPages: 260,
+      currentChapterIndex: 0,
+      scrollPercent: 0,
+      percentage: 0,
+      completed: false,
+      totalReadingTimeMinutes: 0
+    },
+    bookmarks: [],
+    notes: [],
+    createdAt: '2026-10-30T10:00:00.000Z',
+    chapters: [
+      {
+        id: 'c6-1',
+        title: 'Bab 1: Ranu Pane Saat Fajar Menyingsing',
+        content: `Kabut tipis melayang di atas permukaan air Ranu Pane yang tenang laksana cermin kaca hitam. Di kejauhan, puncak kerucut Mahameru menjulang gagah, sesekali menghembuskan kepulan asap abu vulkanik putih ke langit fajar yang kemerahan.
+
+"Perjalanan ke lereng selatan bukan jalur pendakian biasa, Mas Arga," peringat Mbah Suro, sesepuh Tengger yang mengantar kami dengan kuda gunungnya. "Di sana tidak ada jejak tapak manusia. Hutan lumutnya lebat dan banyak jurang kaldera yang tertutup kabut tebal."
+
+Arga mengencangkan tali ransel berbeban 25 kilogram di pundaknya. Bersama empat rekannya, ia memegang salinan manuskrip lontar kuno Negarakretagama yang menyebutkan tentang tempat pertapaan Resi Jayabaya di ketinggian 2.800 meter.`
+      }
+    ]
+  }
+];
+
+export const INITIAL_USER: UserProfile = {
+  id: 'user-rendy',
+  name: 'Rendy Prayoga',
+  email: 'rendibky66@gmail.com',
+  avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=250&q=80',
+  bio: 'Pecinta novel fantasi, misteri, dan sastra klasik. Koleksi novel digital selalu tersimpan rapi di NOVEL BOX.',
+  readingGoalPerYear: 24,
+  joinedAt: '2026-01-10'
+};
+
+export const GENRE_LIST = [
+  'Semua',
+  'Romance',
+  'Fantasy',
+  'Mystery',
+  'Adventure',
+  'Inspirasi',
+  'Horror',
+  'Sci-Fi',
+  'Petualangan',
+  'Slice of Life',
+  'Thriller',
+  'Klasik'
+];
